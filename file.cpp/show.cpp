@@ -23,12 +23,10 @@ int showMenu(SDL_Event e)
 
     int x, y;
     LTexture text_menu[2];
-    text_menu[0].SetColor(2);
 	text_menu[0].loadFromFile("res/start.png");
     text_menu[0].confirmOx_Oy(item[0].x, item[0].y);
     text_menu[0].SetRect();
 
-    text_menu[1].SetColor(2);
     text_menu[1].loadFromFile("res/quit.png");
     text_menu[1].confirmOx_Oy(item[1].x, item[1].y);
     text_menu[1].SetRect();
@@ -213,12 +211,11 @@ int showGameOver(SDL_Event e)
 
     int x, y;
     LTexture text_GameOver[2];
-    text_GameOver[0].SetColor(2);
+   
     text_GameOver[0].loadFromFile("res/start.png");
    	text_GameOver[0].confirmOx_Oy(item[0].x, item[0].y);
     text_GameOver[0].SetRect();
 
-    text_GameOver[1].SetColor(2);
     text_GameOver[1].loadFromFile("res/quit.png");
     text_GameOver[1].confirmOx_Oy(item[1].x, item[1].y);
     text_GameOver[1].SetRect();
@@ -306,12 +303,12 @@ int showWin(SDL_Event e)
 
     int x, y;
     LTexture text_win[2];
-    text_win[0].SetColor(2);
+  
 	text_win[0].loadFromFile("res/start.png");
     text_win[0].confirmOx_Oy(item[0].x, item[0].y);
     text_win[0].SetRect();
 
-    text_win[1].SetColor(2);
+    
     text_win[1].loadFromFile("res/quit.png");
     text_win[1].confirmOx_Oy(item[1].x, item[1].y);
     text_win[1].SetRect();
