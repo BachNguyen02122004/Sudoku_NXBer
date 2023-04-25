@@ -1,5 +1,4 @@
 #include "Function.h"
-#include "Board.h"
 #include "LTexture.h"
 #include "Area.h"
 #include "CellData.h"
@@ -268,23 +267,81 @@ void drawHint(){
 void RandomBoard(){
 	SDL_Event event;
 	srand(time(NULL));
+	int random = (rand() % 334) + 1;
+   
 	int check = showDifficulty(event);
 	if(check == 1) quit = true;
 	if(check == 3){
-	int idx = rand() % (sizeof(EasyBoards)/sizeof(EasyBoards[0])) ;
-	su =  EasyBoards[idx];
-	ans = ansEasyBoards[idx];
+		std::string chosenLine;
+		std::vector<std::string> chosenProblem;
+		std::vector<std::string> chosenAns;
+		std::ifstream problemData("sudoku_easy.csv");
+    	for(int i = 1; std::getline(problemData, chosenLine); i++)
+    	{
+        	if(i == random) break;
+    	}
+		if (chosenLine.size() >= 83) {
+			chosenProblem.push_back(chosenLine.substr(0, 81));
+			chosenAns.push_back(chosenLine.substr(82));
+		}
+
+		for(int i = 0; i<9; i++){
+			for(int j = 0; j<9; j++){
+				int problemVal = std::stoi(chosenProblem[0].substr(9 * i + j, 1));
+				int ansVal = std::stoi(chosenAns[0].substr(9 * i + j, 1));
+				su.board[i][j] = problemVal;
+				ans.board[i][j] = ansVal;
+			}
+		}
 	}
+
 	if(check == 4){
-		int idx = rand() % (sizeof(MediumBoard)/sizeof(MediumBoard[0])) ;
-		su =  MediumBoard[idx];
-		ans = ansMediumBoard[idx];
+		std::string chosenLine;
+		std::vector<std::string> chosenProblem;
+		std::vector<std::string> chosenAns;
+		std::ifstream problemData("sudoku_medium.csv");
+    	for(int i = 1; std::getline(problemData, chosenLine); i++)
+    	{
+        	if(i == random) break;
+    	}
+		if (chosenLine.size() >= 83) {
+			chosenProblem.push_back(chosenLine.substr(0, 81));
+			chosenAns.push_back(chosenLine.substr(82));
+		}
+
+		for(int i = 0; i<9; i++){
+			for(int j = 0; j<9; j++){
+				int problemVal = std::stoi(chosenProblem[0].substr(9 * i + j, 1));
+				int ansVal = std::stoi(chosenAns[0].substr(9 * i + j, 1));
+				su.board[i][j] = problemVal;
+				ans.board[i][j] = ansVal;
+			}
+		}
 	}
 	if(check == 5){
-		int idx = rand() % (sizeof(HardBoard)/sizeof(HardBoard[0])) ;
-		su =  HardBoard[idx];
-		ans = ansHardBoard[idx];
+		std::string chosenLine;
+		std::vector<std::string> chosenProblem;
+		std::vector<std::string> chosenAns;
+		std::ifstream problemData("sudoku_hard.csv");
+    	for(int i = 1; std::getline(problemData, chosenLine); i++)
+    	{
+        	if(i == random) break;
+    	}
+		if (chosenLine.size() >= 83) {
+			chosenProblem.push_back(chosenLine.substr(0, 81)); // substr tach chuoi 
+			chosenAns.push_back(chosenLine.substr(82));
+		}
+
+		for(int i = 0; i<9; i++){
+			for(int j = 0; j<9; j++){
+				int problemVal = std::stoi(chosenProblem[0].substr(9 * i + j, 1));
+				int ansVal = std::stoi(chosenAns[0].substr(9 * i + j, 1));
+				su.board[i][j] = problemVal;
+				ans.board[i][j] = ansVal;
+			}
+		}
 	}
+
 	for (int i = 0; i < 9; i++)
 	{
 		for (int j = 0; j < 9; j++)
@@ -450,12 +507,23 @@ void handleKey (SDL_Event &event)
 						break;
 					}
 				}
-				case SDLK_1: case SDLK_2: case SDLK_3: case SDLK_4: 
-				case SDLK_5: case SDLK_6: case SDLK_7: case SDLK_8: case SDLK_9:
+				case SDLK_1: case SDLK_KP_1:
+				case SDLK_2: case SDLK_KP_2:
+				case SDLK_3: case SDLK_KP_3:
+				case SDLK_4: case SDLK_KP_4:
+				case SDLK_5: case SDLK_KP_5:
+				case SDLK_6: case SDLK_KP_6:
+				case SDLK_7: case SDLK_KP_7:
+				case SDLK_8: case SDLK_KP_8:
+				case SDLK_9: case SDLK_KP_9:
 				{
 					int prev = data [sel_x][sel_y].digit;
-					
-					int nr = sym - SDLK_1 + 1;
+					int nr = 0;
+    				if (sym >= SDLK_1 && sym <= SDLK_9) {
+       					 nr = sym - SDLK_1 + 1;
+   					} else if (sym >= SDLK_KP_1 && sym <= SDLK_KP_9) {
+        				 nr = sym - SDLK_KP_1 + 1;
+					}
 					if (prev == nr)
 						break;
 					
@@ -578,8 +646,6 @@ int main( int argc, char* args[] )
 			}
 		}
 
-
-		//Fill the surface white
 		SDL_SetRenderDrawColor ( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
 		SDL_RenderClear(gRenderer);
 		drawBackground ();
@@ -589,6 +655,7 @@ int main( int argc, char* args[] )
 		drawGrid();
 		drawInvalidCells();
 		drawSelection ();
+		// checkHeart();
 		drawText();
 		
 		if(Hint_number != 0){
@@ -604,8 +671,8 @@ int main( int argc, char* args[] )
 		int size = 9 * CELL_SIZE + 2;
 		SDL_Rect dst = { ( SCREEN_WIDTH - size ) / 2, ( SCREEN_HEIGHT - size ) / 2, size, size }; 
 		// dieu chinh mang
-		// xu ly time
 		heart.show();
+		// xu ly time
 		int  minute = 0;
 		
 		int num1 =(SDL_GetTicks()/1000) - num2;
@@ -628,12 +695,12 @@ int main( int argc, char* args[] )
 		
 		std::string abc = minute1 + ":" + second;
 		gTextTexture.loadFromRenderedText( abc, gTextTexture.GetColor() );
-		gTextTexture.render(600,0);
+		gTextTexture.render(650,0);
 
 		std::string YourTime = "Your time:  " + abc;
 		gYourtime.loadFromRenderedText(YourTime, gYourtime.GetColor());
 		// xu ly hintText
-		std::string a = "Hint: " + std::to_string(Hint_number);
+		std::string a = "Hint:" + std::to_string(Hint_number);
 		HintText.loadFromRenderedText(a,HintText.GetColor()); // hien thi ten 
 		HintText.render(650, 170);
 		if(checkBoard())
