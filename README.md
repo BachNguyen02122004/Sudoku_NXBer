@@ -4,7 +4,7 @@
 ## Luật chơi 
     - Mục tiêu của trò chơi là điền các chữ số vào một lưới 9×9 sao cho mỗi cột, mỗi hàng, và mỗi phần trong số chín lưới con 3×3 cấu tạo nên lưới chính (cũng gọi là "hộp", "khối", hoặc "vùng") đều chứa tất cả các chữ số từ 1 tới 9. Câu đố đã được hoàn thành một phần, người chơi phải bằng việc điền số.
 
-      ![image](https://user-images.githubusercontent.com/125589612/234465015-03f55b3d-59f8-4864-b4b4-89c4f483836a.png)
+      ![image](https://user-images.githubusercontent.com/125589612/234465205-a45bd453-ecbf-4966-b28b-5384c6d6b46a.png)
 
 
 
