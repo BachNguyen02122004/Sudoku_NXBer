@@ -116,17 +116,14 @@ int showDifficulty(SDL_Event e)
 	
     int x, y;
     LTexture text_choose[3];
-   	text_choose[0].SetColor(2);
-	   text_choose[0].loadFromFile("res/easy1.png");
-	    text_choose[0].confirmOx_Oy(item[0].x, item[0].y);
-	    text_choose[0].SetRect();
+	text_choose[0].loadFromFile("res/easy1.png");
+	text_choose[0].confirmOx_Oy(item[0].x, item[0].y);
+	text_choose[0].SetRect();
 
-    text_choose[1].SetColor(2);
    text_choose[1].loadFromFile("res/medium1.png");
     text_choose[1].confirmOx_Oy(item[1].x, item[1].y);
     text_choose[1].SetRect();
 
-	text_choose[2].SetColor(1);
    	text_choose[2].loadFromFile("res/hard1.png");
     text_choose[2].confirmOx_Oy(item[2].x, item[2].y);
    text_choose[2].SetRect();
