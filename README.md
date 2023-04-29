@@ -24,4 +24,4 @@ c) Đồ họa game
 
 
 d) Âm thanh 
- Âm thanh cực kì sống động, hiệu ứng âm thanh nổi bật, lôi cuốn.
+ - Âm thanh cực kì sống động, hiệu ứng âm thanh nổi bật, lôi cuốn.
