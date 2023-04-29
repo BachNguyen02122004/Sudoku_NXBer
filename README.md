@@ -6,6 +6,7 @@ Game sử dụng thư viện SDL2
   
 ## LUẬT CHƠI
 - Sử dụng chuột để di chuyển tới các ô (có thể sử dụng bàn phím ) 
+         + abxsdsdsd
 - Sử dụng bàn phím để nhập số 
 - Bấm 's' hoặc 'p' để dừng nhạc
 - Nếu người chơi điền quá 3 ô thì sẽ thua cuộc 
