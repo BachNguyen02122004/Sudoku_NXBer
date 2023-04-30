@@ -23,10 +23,17 @@ b) Luật chơi
 
 c) Hướng dẫn chơi + đồ họa game 💯
 --
+* Người chơi bấm chọn Start để bắt đầu hoặc bấm quit để thoát trò chơi : 
+
+![anh_menu1](https://user-images.githubusercontent.com/125589612/235361887-afdb204e-3fe8-4b5a-b906-f6ffb5f83ef6.png)
+* Người chơi chọn Mức độ để tiến hành chơi game 
+
 ![anh_chedo1](https://user-images.githubusercontent.com/125589612/235335444-8839af7e-0582-41c6-91b6-f42f5be72ae1.png)
 * sau khi chọn mức độ thì màn hình sẽ hiện ra bảng Sudoku, người chơi bắt đâu giải có tính time : 
+
 ![anh_game1](https://user-images.githubusercontent.com/125589612/235335454-5acee027-fb53-4ee3-aa42-aa43610649f6.png)
 * Kết thúc game:
+
  ![game_over2](https://user-images.githubusercontent.com/125589612/235335456-59a52d6a-f714-4984-a2aa-cb870317c667.png)
 
 
