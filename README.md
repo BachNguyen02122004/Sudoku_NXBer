@@ -34,10 +34,13 @@ c) Hướng dẫn chơi + đồ họa game 💯
 ![anh_game1](https://user-images.githubusercontent.com/125589612/235335454-5acee027-fb53-4ee3-aa42-aa43610649f6.png)
 * Kết thúc game:
 
+ ![youwin](https://user-images.githubusercontent.com/125589612/235683983-41e65b14-8831-4d18-a3b9-253a65c70d86.png)
+
+
  ![game_over2](https://user-images.githubusercontent.com/125589612/235335456-59a52d6a-f714-4984-a2aa-cb870317c667.png)
 
 
 
 
 d) Âm thanh 
- - Âm thanh cực kì sống động, hiệu ứng âm thanh nổi bật, lôi cuốn.
+ - Âm thanh sống động, phù hợp với trò chơi . 
