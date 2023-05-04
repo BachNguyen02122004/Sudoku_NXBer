@@ -1,5 +1,5 @@
-OBJS = bai.cpp Area.cpp Function.cpp LTexture.cpp heart.cpp draw.cpp show.cpp
-OBJ_NAME = bai.exe
+OBJS = main.cpp Area.cpp Function.cpp LTexture.cpp heart.cpp draw.cpp show.cpp
+OBJ_NAME = main.exe
 COMPILER_FLAGS = -std=c++17
 LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 INCLUDE_DIR = -Iinclude
