@@ -23,6 +23,10 @@ b) Luật chơi
 
 c) Hướng dẫn chơi + đồ họa game 💯
 --
+- Cài đặt sdl2 và makefile vào vscode.
+- Download source code về thư mục có chứa file sdl2 và vscode.
+- Đưa hết tất các file .cpp, .h res ở trong thư mục chứa nó ra ngoài.
+- Sau đó người chơi sử dụng make file để chạy chương trình.
 * Người chơi bấm chọn Start để bắt đầu hoặc bấm quit để thoát trò chơi : 
 
 ![anh_menu1](https://user-images.githubusercontent.com/125589612/235361887-afdb204e-3fe8-4b5a-b906-f6ffb5f83ef6.png)
@@ -42,5 +46,12 @@ c) Hướng dẫn chơi + đồ họa game 💯
 
 
 
-d) Âm thanh 
+d) Âm thanh
+--
  - Âm thanh sống động, phù hợp với trò chơi . 
+
+e)Về cải tiến game :
+--
+ - Có thể thêm chức năng pause game vào chương trình. 
+ - Cải tiến game sai quá 3 lần thì người chơi sẽ thua (tạo cho game có độ khó cao hơn) .
+ 
